@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — My Stack Ledger</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0D1219;
+      --s1:        #151D28;
+      --s2:        #1D2838;
+      --border:    rgba(255,255,255,0.07);
+      --text:      #C5D5EA;
+      --secondary: #617485;
+      --disabled:  #3A4A5A;
+      --accent:    #7091C8;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+    }
+
+    .site-header a {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      color: var(--secondary);
+      letter-spacing: 0.02em;
+    }
+
+    .site-header a:hover { color: var(--text); text-decoration: none; }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .page-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      color: var(--text);
+      padding: 6px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--disabled);
+      font-family: 'DM Mono', monospace;
+    }
+
+    .highlight {
+      background: var(--s2);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--text);
+      border-left: 3px solid var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--secondary);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    footer a { color: var(--secondary); }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .card { padding: 20px; }
+      main { padding: 40px 16px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html">← My Stack Ledger</a>
+  </header>
+
+  <main>
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: June 2026</p>
+
+    <div class="card">
+      <h2>The short version</h2>
+      <div class="highlight">
+        My Stack Ledger does not collect, transmit, or store any personal data outside your device. Everything stays on your phone.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Data storage</h2>
+      <p>All data you enter into My Stack Ledger — supplement names, schedules, dose logs, stock levels, and notes — is stored exclusively in a local SQLite database on your device. This data never leaves your device and is never transmitted to any server.</p>
+      <p>My Stack Ledger has no backend, no cloud sync, and no user accounts.</p>
+    </div>
+
+    <div class="card">
+      <h2>Data we do not collect</h2>
+      <ul>
+        <li>Personal identifiers (name, email address, phone number)</li>
+        <li>Location data</li>
+        <li>Health or biometric data</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Usage analytics or crash reports</li>
+        <li>Any form of behavioural or diagnostic telemetry</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Analytics and tracking</h2>
+      <p>My Stack Ledger contains no analytics SDKs, no tracking libraries, and no third-party code that collects user data. There are no advertisements and no advertising networks.</p>
+    </div>
+
+    <div class="card">
+      <h2>Notifications</h2>
+      <p>If you enable reminders, dose notifications are scheduled entirely on-device using the iOS local notification APIs. No data about your supplements or schedule is transmitted to any external service to deliver these notifications.</p>
+    </div>
+
+    <div class="card">
+      <h2>Third parties</h2>
+      <p>My Stack Ledger does not share any data with third parties because no data is collected in the first place. There are no third-party integrations, no social logins, and no data brokers involved at any point.</p>
+    </div>
+
+    <div class="card">
+      <h2>Data deletion</h2>
+      <p>All app data is stored locally on your device. You can delete all data at any time by uninstalling the application. No residual data remains on any server after uninstallation.</p>
+    </div>
+
+    <div class="card">
+      <h2>Children</h2>
+      <p>My Stack Ledger is not directed at children under the age of 13 and does not knowingly collect information from children.</p>
+    </div>
+
+    <div class="card">
+      <h2>Changes to this policy</h2>
+      <p>If this privacy policy is updated, the revised version will be published at this URL with an updated date. As no data is collected, changes would only reflect new features or clarifications — never a change to data collection practices.</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>For privacy questions or concerns, contact us at <a href="mailto:contact@mystackledger.app">contact@mystackledger.app</a>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      <a href="index.html">My Stack Ledger</a> &nbsp;·&nbsp;
+      <a href="terms.html">Terms of Use</a> &nbsp;·&nbsp;
+      <a href="mailto:contact@mystackledger.app">contact@mystackledger.app</a>
+    </p>
+  </footer>
+
+</body>
+</html>

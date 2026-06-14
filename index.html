@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Stack Ledger — Supplement Tracker</title>
+  <meta name="description" content="Track your supplement stack. Privately. On your device. A local-first supplement tracker with reminders and stock management." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0D1219;
+      --s1:        #151D28;
+      --s2:        #1D2838;
+      --border:    rgba(255,255,255,0.07);
+      --text:      #C5D5EA;
+      --secondary: #617485;
+      --disabled:  #3A4A5A;
+      --accent:    #7091C8;
+      --cat-1:     #D4B56A;
+      --cat-2:     #5BAAB0;
+      --cat-3:     #A688C8;
+      --cat-4:     #6AA884;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 64px;
+    }
+
+    .wordmark {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 32px;
+    }
+
+    .dot-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      max-width: 640px;
+      margin-bottom: 24px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--secondary);
+      max-width: 480px;
+      margin-bottom: 56px;
+      line-height: 1.6;
+    }
+
+    /* ── Features ── */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      max-width: 840px;
+      width: 100%;
+      margin-bottom: 64px;
+    }
+
+    .feature {
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: left;
+    }
+
+    .feature-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── Privacy badge ── */
+
+    .privacy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--s1);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--secondary);
+      margin-bottom: 64px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cat-4);
+      flex-shrink: 0;
+    }
+
+    /* ── Legal links ── */
+
+    .legal-links {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .legal-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--secondary);
+      letter-spacing: 0.02em;
+    }
+
+    .legal-links a:hover {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* ── Footer ── */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--disabled);
+    }
+
+    footer a {
+      color: var(--disabled);
+    }
+
+    footer a:hover {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 56px 16px 48px; }
+      .features { gap: 8px; }
+      .legal-links { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="hero">
+
+    <p class="wordmark">My Stack Ledger</p>
+
+    <div class="dot-row" aria-hidden="true">
+      <div class="dot" style="background: var(--cat-1);"></div>
+      <div class="dot" style="background: var(--cat-2);"></div>
+      <div class="dot" style="background: var(--cat-3);"></div>
+      <div class="dot" style="background: var(--cat-4);"></div>
+    </div>
+
+    <h1>Track your supplement stack.<br>Privately. On your device.</h1>
+
+    <p class="tagline">
+      A local-first supplement tracker with dose scheduling, stock management, and on-device reminders — no account, no cloud, no data collection.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <p class="feature-label">Dose tracking</p>
+        <p>Log every dose with one tap. Schedules adapt to your protocol, not the other way around.</p>
+      </div>
+      <div class="feature">
+        <p class="feature-label">Stock management</p>
+        <p>Track how much you have left and get warned when you're running low, before you run out.</p>
+      </div>
+      <div class="feature">
+        <p class="feature-label">Local reminders</p>
+        <p>Dose notifications fire on-device via iOS. No server involved, no data sent anywhere.</p>
+      </div>
+      <div class="feature">
+        <p class="feature-label">Fully free</p>
+        <p>No subscription, no in-app purchases, no ads. Free today, free tomorrow.</p>
+      </div>
+    </div>
+
+    <div class="privacy-badge">
+      <span class="badge-dot"></span>
+      All data stays on your device — always
+    </div>
+
+    <nav class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="mailto:contact@mystackledger.app">contact@mystackledger.app</a>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 My Stack Ledger &nbsp;·&nbsp; <a href="mailto:contact@mystackledger.app">contact@mystackledger.app</a></p>
+  </footer>
+
+</body>
+</html>
